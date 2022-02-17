@@ -19,7 +19,7 @@ def get_url(nom, dep, code):
 
 if __name__ == '__main__':
     #Lecture du CSV contenant les codes INSEE et les noms de communes
-    df_communes = pd.read_csv('./Resources/communes_short.csv', sep=';', encoding='utf-8', nrows= 1000, dtype=str)
+    df_communes = pd.read_csv('./Resources/communes_short.csv', sep=';', encoding='utf-8', dtype=str)
 
     #Echantillon total n
     n = df_communes.shape[0]
