@@ -5,8 +5,6 @@ import urllib.request
 import time
 import datetime
 import concurrent.futures
-from itertools import repeat
-from Utils.progress_bar import progressBar
 
 def get_url(nom, dep, code):
     url = f"https://www.bien-dans-ma-ville.fr/{nom}-{dep}-{code}"
