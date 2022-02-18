@@ -50,6 +50,9 @@ if __name__ == '__main__':
     df_communes_short['url'] = ""
     df_communes_short['url'] = df_communes_short['url'].astype(str)
     
+    #Suppression des doublons
+    df_communes_short = df_communes_short.drop_duplicates(subset=['code'])
+    
     #Sauvegarde des nouvelles données dans un nouveau csv
     df_communes_short.to_csv(CSV_FILE, sep=';', encoding='utf-8', index=False)
     print(f"Enregistrement dans le fichier '{CSV_FILE}'.\n")
