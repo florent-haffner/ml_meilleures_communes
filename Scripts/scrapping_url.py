@@ -17,7 +17,7 @@ def get_url(nom, dep, code):
     try:
         fp = urllib.request.urlopen(url)
         fp.close()
-        sleep(1) #Permet d'éviter le ban ip du site (Côté négatif, rallonge le temps de traitement)
+        sleep(randint(1,5)) #Permet d'éviter le ban ip du site (Côté négatif, rallonge le temps de traitement)
         return url
     except urllib.error.HTTPError as exception: #On gère l'erreur 404 et on ajoute l'index dans notre liste
         pass
