@@ -2,7 +2,6 @@
 import pandas as pd
 from unidecode import unidecode
 import numpy as np
-import time
 from datetime import datetime
 
 #Constantes
@@ -40,7 +39,7 @@ if __name__ == '__main__':
         
     #Gestion colonnes code et dep
     df_communes_short['code'] = df_communes_short['code'].apply(lambda x: '0' + x if len(x) < 5 else x)
-    df_communes_short['dep'] = df_communes_short['dep'].apply(lambda x: '0' + x if len(x) < 3 else x)
+    df_communes_short['dep'] = df_communes_short['dep'].apply(lambda x: '0' + x if len(x) < 2 else x)
 
     #Réarangement des colonnes => index passe en première position
     cols = df_communes_short.columns.tolist()
