@@ -12,7 +12,7 @@ import Utils.csv_utils as csv_utils
 #Constantes
 DATASET_FILE = './Resources/communes_short.csv'
 CSV_FILE = './Resources/communes_url.csv'
-NROWS = 1000 #Nombre de lignes récupérée dans le dataframe
+NROWS = 2000 #Nombre de lignes récupérée dans le dataframe
 
 def get_url(nom, dep, code):    
     url = f"https://www.bien-dans-ma-ville.fr/{nom}-{dep}-{code}"
@@ -31,7 +31,7 @@ if __name__ == '__main__':
     
     #Récupération du dataframe
     if NROWS != 0: #S'il y a une valeur précise de lignes à récupérer, on récupère ce nombre de colonnes
-        df_communes = pd.read_csv(DATASET_FILE, sep=';', encoding='utf-8', dtype=str, skiprows=range(1, last_index + 2), nrows=NROWS)
+        df_communes = pd.read_csv(DATASET_FILE, sep=';', encoding='utf-8', dtype=str, skiprows=range(1, last_index + 2), nrows = NROWS + 1)
     else: #Sinon, on en récupère le plus possible
         df_communes = pd.read_csv(DATASET_FILE, sep=';', encoding='utf-8', dtype=str, skiprows=range(1, last_index + 2))
         
@@ -47,9 +47,9 @@ if __name__ == '__main__':
     end_time = time.time()
     total_time = datetime.timedelta(seconds=end_time-start_time)
     #Affichage du temps total
-    print("\nThe operation took {0}".format(total_time))
+    print(f"The operation took {total_time} \n")
 
-    #On supprime les lignes n'ayant pas d'HTML
+    #On supprime les lignes n'ayant pas d'url
     df_communes = df_communes[df_communes['url'].notna()]
     
     #Sauvegarde du CSV
