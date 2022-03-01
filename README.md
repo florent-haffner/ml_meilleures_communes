@@ -12,3 +12,12 @@ L'équipe est composée de :
 - NGUYEN Thomas
 - PUGLISI Axel
 
+
+## Env
+Automate new env creation with the followings :
+
+```bash
+conda create -n ml-communes python=3.9
+
+conda activate ml-communes && pip install -r requirements.txt
+```
