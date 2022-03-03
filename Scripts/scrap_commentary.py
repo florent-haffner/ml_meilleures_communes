@@ -50,7 +50,10 @@ def get_commentary_from_params(lien, insee):
       Taux_chomage.append(soup.find_all('td')[13].text.strip())
       Revenu_moyen.append(soup.find_all('td')[16].text.strip())
       Prix_moyen.append(soup.find_all('td')[19].text.strip())
-      Tranche_population_0_14.append(soup.find("canvas",id="chart_age")["data-data"])
+      if(soup.find("canvas",id="chart_age")["data-data"] is not None):
+        Tranche_population_0_14.append(soup.find("canvas",id="chart_age")["data-data"])
+      else :
+        Tranche_population_0_14.append(np.nan)
       Activite_professionnelle.append(soup.find("canvas",id="chart_metier")["data-data"])
       if (soup.find("div", {"class": "total compteur"}) is not None ):
         Note_global.append(soup.find("div", {"class": "total compteur"}).contents[0])
