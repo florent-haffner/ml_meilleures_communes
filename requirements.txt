@@ -1,2 +1,20 @@
+# data scraping & treatment
+pandas
 requests
 beautifulsoup4
+
+# ML
+scikit-learn==1.0.1
+nltk==3.7
+textblob==0.17.1
+textblob-fr==0.2.0
+spacy==3.2.2
+gensim==4.1.2
+
+# IDE and EDA/dataviz
+jupyter==1.0.0
+jupyterlab==3.2.9
+notebook==6.4.5
+matplotlib==3.4.3
+pandas==1.3.4
+plotly==5.3.1
