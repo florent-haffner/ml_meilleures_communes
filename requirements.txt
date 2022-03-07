@@ -1,5 +1,4 @@
 # data scraping & treatment
-pandas
 requests
 beautifulsoup4
 
